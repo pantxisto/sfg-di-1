@@ -1,6 +1,8 @@
 package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controllers.*;
+import guru.springframework.sfgdi.services.ProptotypeBean;
+import guru.springframework.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -36,6 +38,18 @@ public class SfgDiApplication {
 		System.out.println("-------- Constructor" );
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("------------ Bean Scopes -------------");
+		SingletonBean singletonBean1 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean1.getMyScope());
+		SingletonBean singletonBean2 = ctx.getBean((SingletonBean.class));
+		System.out.println(singletonBean2.getMyScope());
+
+		ProptotypeBean proptotypeBean1 = ctx.getBean(ProptotypeBean.class);
+		System.out.println(proptotypeBean1.getMyScope());
+		ProptotypeBean proptotypeBean2 = ctx.getBean(ProptotypeBean.class);
+		System.out.printf(proptotypeBean2.getMyScope());
+
 	}
 
 }
