@@ -1,0 +1,4 @@
+jon:
+  username: QAsuperuser
+  password: QAdbPassword
+  jdbcurl: QAsomeUrlforDB

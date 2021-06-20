@@ -1,0 +1,4 @@
+jon:
+  username: DEVsuperuser
+  password: DEVdbPassword
+  jdbcurl: DEVsomeUrlforDB
